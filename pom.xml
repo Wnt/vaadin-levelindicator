@@ -22,7 +22,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <vaadin.version>7.0-SNAPSHOT</vaadin.version>
+        <vaadin.version>7.0.0.beta10</vaadin.version>
     </properties>
 
     <build>
@@ -286,12 +286,11 @@
             <version>${vaadin.version}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-themes-compiled</artifactId>
-            <version>${vaadin.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-client-compiled</artifactId>
+			<version>7.0.0.beta10</version>
+		</dependency>
 
 
         <dependency>
