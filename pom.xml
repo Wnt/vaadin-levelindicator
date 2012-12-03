@@ -39,10 +39,8 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.1</version>
                 <configuration>
                     <archive>
-                        <index>true</index>
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <!-- Implementation-Title and Implementation-Version come from the 
@@ -58,10 +56,6 @@
                             <Vaadin-Widgetsets>org.vaadin.addon.levelindicator.Widgetset</Vaadin-Widgetsets>
                         </manifestEntries>
                     </archive>
-                    <excludes>
-                        <!-- Remove resources included due to gwt compilation -->
-                        <exclude>**/demoandtestapp/*</exclude>
-                    </excludes>
                 </configuration>
             </plugin>
 
