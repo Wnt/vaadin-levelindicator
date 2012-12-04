@@ -13,9 +13,8 @@ import com.google.gwt.user.client.ui.Label;
 // TODO extend any GWT Widget
 public class LevelindicatorWidget<K> extends Label {
 
-	public static final String CLASSNAME = "mycomponent";
+	public static final String CLASSNAME = "levelindicator";
 	private Paper paper;
-	private Rect rect;
 	private int width;
 	private int height;
 	private int barCount;
@@ -25,15 +24,6 @@ public class LevelindicatorWidget<K> extends Label {
 	public LevelindicatorWidget() {
 
 		setStyleName(CLASSNAME);
-		initBars();
-	}
-
-	private void initBars() {
-		this.width = 40;
-		this.height = 24;
-		paper = Raphael.paper(this.getElement(), width, height);
-		rect = paper.rect(0, 0, width, height);
-		rect.attr(Attrs.create().fill("#e6e6e6").stroke(""));
 
 	}
 
@@ -43,7 +33,16 @@ public class LevelindicatorWidget<K> extends Label {
 
 	public void setFilledBars(int count) {
 		this.filledBars = count;
+		if (paper == null) {
+			draw();
+		}
 		redrawBars();
+	}
+
+	private void draw() {
+		width = getElement().getClientWidth();
+		height = getElement().getClientHeight();
+		paper = Raphael.paper(this.getElement(), width, height);
 	}
 
 	private void redrawBars() {

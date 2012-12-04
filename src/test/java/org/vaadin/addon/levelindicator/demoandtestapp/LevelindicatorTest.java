@@ -15,6 +15,8 @@ public class LevelindicatorTest extends AbstractTest {
 		VerticalLayout layout = new VerticalLayout();
 
 		final Levelindicator c = new Levelindicator(9, 3);
+		c.setWidth(600, Unit.PIXELS);
+		c.setHeight(300, Unit.PIXELS);
 		layout.addComponent(c);
 
 		Button b = new Button("+1");
@@ -31,6 +33,8 @@ public class LevelindicatorTest extends AbstractTest {
 				}
 			}
 		});
+		final Levelindicator cc = new Levelindicator(3, 1);
+		layout.addComponent(cc);
 		return layout;
 	}
 }

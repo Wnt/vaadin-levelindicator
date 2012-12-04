@@ -16,6 +16,8 @@ public class Levelindicator extends AbstractComponent {
 	public Levelindicator(int bars, int filledBars) {
 		this.bars = bars;
 		this.filledBars = filledBars;
+		setWidth(40, Unit.PIXELS);
+		setHeight(24, Unit.PIXELS);
 	}
 
 	@Override
