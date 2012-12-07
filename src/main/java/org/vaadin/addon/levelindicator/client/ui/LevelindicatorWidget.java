@@ -16,16 +16,13 @@ public class LevelindicatorWidget<K> extends Label {
 
 	public static final String CLASSNAME = "levelindicator";
 	private Paper paper;
-	private int width = 40;
-	private int height = 24;
+	private int width;
+	private int height;
 	private int barCount;
 	private int filledBars;
 	private List<Rect> bars;
 
 	public LevelindicatorWidget() {
-		setWidth(width + "px");
-		setHeight(height + "px");
-
 		setStyleName(CLASSNAME);
 
 		addAttachHandler(new AttachEvent.Handler() {
@@ -44,9 +41,12 @@ public class LevelindicatorWidget<K> extends Label {
 	public void setFilledBars(int count) {
 		this.filledBars = count;
 		if (isAttached()) {
+			// jos ei vielä alustettu
 			if (paper == null) {
 				draw();
-			} else if (width != getElement().getClientWidth()
+			}
+			// tai jos koko muuttunut
+			else if (width != getElement().getClientWidth()
 					|| height != getElement().getClientHeight()) {
 				redraw();
 			}
