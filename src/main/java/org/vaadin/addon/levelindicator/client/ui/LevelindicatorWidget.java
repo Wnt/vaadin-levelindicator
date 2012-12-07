@@ -8,6 +8,7 @@ import org.sgx.raphael4gwt.raphael.Raphael;
 import org.sgx.raphael4gwt.raphael.Rect;
 import org.sgx.raphael4gwt.raphael.base.Attrs;
 
+import com.google.gwt.event.logical.shared.AttachEvent;
 import com.google.gwt.user.client.ui.Label;
 
 // TODO extend any GWT Widget
@@ -15,15 +16,24 @@ public class LevelindicatorWidget<K> extends Label {
 
 	public static final String CLASSNAME = "levelindicator";
 	private Paper paper;
-	private int width;
-	private int height;
+	private int width = 40;
+	private int height = 24;
 	private int barCount;
 	private int filledBars;
 	private List<Rect> bars;
 
 	public LevelindicatorWidget() {
+		setWidth(width + "px");
+		setHeight(height + "px");
 
 		setStyleName(CLASSNAME);
+
+		addAttachHandler(new AttachEvent.Handler() {
+			@Override
+			public void onAttachOrDetach(AttachEvent event) {
+				draw();
+			}
+		});
 
 	}
 
@@ -33,16 +43,29 @@ public class LevelindicatorWidget<K> extends Label {
 
 	public void setFilledBars(int count) {
 		this.filledBars = count;
-		if (paper == null) {
-			draw();
+		if (isAttached()) {
+			if (paper == null) {
+				draw();
+			} else if (width != getElement().getClientWidth()
+					|| height != getElement().getClientHeight()) {
+				redraw();
+			}
+			redrawBars();
 		}
-		redrawBars();
+	}
+
+	private void redraw() {
+		removeBars();
+		paper.clear();
+		getElement().setInnerHTML("");
+		draw();
 	}
 
 	private void draw() {
 		width = getElement().getClientWidth();
 		height = getElement().getClientHeight();
 		paper = Raphael.paper(this.getElement(), width, height);
+		drawBars();
 	}
 
 	private void redrawBars() {
