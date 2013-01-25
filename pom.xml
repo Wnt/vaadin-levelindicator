@@ -332,13 +332,6 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
-		<dependency>
-			<groupId>org.sgx</groupId>
-			<artifactId>raphael4gwt</artifactId>
-			<version>0.37</version>
-			<systemPath>${project.basedir}/lib/raphael4gwt-0.37.jar</systemPath>
-			<scope>system</scope>
-		</dependency>
 
     </dependencies>
 
