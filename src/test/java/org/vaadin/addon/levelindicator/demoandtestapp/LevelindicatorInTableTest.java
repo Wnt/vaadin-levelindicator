@@ -22,7 +22,7 @@ public class LevelindicatorInTableTest extends AbstractTest {
 		layout.addComponent(table);
 
 		table.addContainerProperty("Column 1", String.class, null);
-		table.addContainerProperty("Coursepointer", Levelindicator.class, null);
+		table.addContainerProperty("Lavelindicator", Levelindicator.class, null);
 
 		final Levelindicator c = new Levelindicator(6, 2);
 		c.setWidth(80, Unit.PIXELS);
@@ -44,5 +44,10 @@ public class LevelindicatorInTableTest extends AbstractTest {
 		});
 
 		return layout;
+	}
+
+	@Override
+	public String getDescription() {
+		return "Levelindicator inside a table. When a component is in a table the client-side initialization happens in a different order.";
 	}
 }

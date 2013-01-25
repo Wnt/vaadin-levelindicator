@@ -33,8 +33,11 @@ public class LevelindicatorTest extends AbstractTest {
 				}
 			}
 		});
-		final Levelindicator cc = new Levelindicator(3, 1);
-		layout.addComponent(cc);
 		return layout;
+	}
+
+	@Override
+	public String getDescription() {
+		return "Click the button to advance the level";
 	}
 }
