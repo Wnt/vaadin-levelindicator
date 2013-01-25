@@ -5,9 +5,6 @@
 	<inherits name="com.vaadin.terminal.gwt.DefaultWidgetSet" />
 	
 	<inherits name="org.sgx.raphael4gwt.Raphael4Gwt" />
-	<!-- Needed by Raphael4Gwt -->
-	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
-	<add-linker name="xsiframe"/>
-	<set-configuration-property name="devModeRedirectEnabled" value="true" />
+<!-- 	<set-configuration-property name="devModeRedirectEnabled" value="true" /> -->
 
 </module>

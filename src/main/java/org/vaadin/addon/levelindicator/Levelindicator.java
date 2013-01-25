@@ -2,13 +2,11 @@ package org.vaadin.addon.levelindicator;
 
 import org.vaadin.addon.levelindicator.client.vaadin.LevelindicatorState;
 
-import com.vaadin.annotations.JavaScript;
 import com.vaadin.ui.AbstractComponent;
 
 /**
  * Server side component for the MyComponent widget.
  */
-@JavaScript({ "public/raphael-min.js", "public/raphael4gwt-all-min.js" })
 public class Levelindicator extends AbstractComponent {
 	private final int bars;
 	private int filledBars;
