@@ -1,6 +1,6 @@
 = LevelIndicator Add-On project =
 Scalable cellphone style level indicator that can have customised amount of bars. Uses raphael4gwt for drawing. raphael4gwt is included in the add-on. The bars are filled red when less than third of the bars are set filled, yellow between one and two thirds filled and green when more than two thirds are filled.
 
- - Vaadin Directory: https://vaadin.com/directory#addon/levelindicator
- - Online demo: http://jonni.jelastic.servint.net/LevelIndicator/
- - raphael4gwt Homepage: http://code.google.com/p/raphael4gwt
+* Vaadin Directory: https://vaadin.com/directory#addon/levelindicator
+* Online demo: http://jonni.jelastic.servint.net/LevelIndicator/
+* raphael4gwt Homepage: http://code.google.com/p/raphael4gwt
